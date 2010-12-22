@@ -5,7 +5,6 @@
 //  Copyright 2010 FLCL.jp. All rights reserved.
 //
 
-#include <mecab.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -51,21 +50,33 @@ char *utf16_to_utf8(const char *input, size_t ilen, size_t *olen) {
 	return iconv_convert_helper(ic, input, ilen, olen);
 }
 
++ (NSArray *)parseToNodeWithString:(NSString *)string {
+	Mecab *instance = [Mecab new];
+	NSArray *result = [instance parseToNodeWithString:string];
+	[instance release];
+	
+	return result;
+}
 
 - (NSArray *)parseToNodeWithString:(NSString *)string {
+
+	if (mecab == NULL) {
+#if TARGET_IPHONE_SIMULATOR
+		mecab = mecab_new2("-d /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/lib/dic/ja/im/");
+#else
+		mecab = mecab_new2("-d /usr/lib/dic/ja/im");
+#endif
+		if (mecab == NULL) {
+			fprintf(stderr, "error in mecab_new2: %s\n", mecab_strerror(NULL));
+			
+			return nil;
+		}
+	}
 	
-	mecab_t *mecab;
 	const mecab_node_t *node;
 	char *buf = (char *)[string UTF8String];
 	char *buf2;
 
-	mecab = mecab_new2("-d /usr/lib/dic/ja/im");
-	if (mecab == NULL) {
-		fprintf(stderr, "error in mecab_new2: %s\n", mecab_strerror(NULL));
-
-		return nil;
-	}
-	
 	size_t olen = 0;
 	buf2 = utf8_to_utf16(buf, strlen(buf), &olen);
 	node = mecab_sparse_tonode2(mecab, buf2, olen);
@@ -78,18 +89,30 @@ char *utf16_to_utf8(const char *input, size_t ilen, size_t *olen) {
 	NSMutableArray *newNodes = [NSMutableArray array];
 	node = node->next;
 	for (; node->next != NULL; node = node->next) {
+		char *surface = utf16_to_utf8(node->surface, node->length, &olen);
+		char *feature = utf16_to_utf8(node->feature, sizeof(node->feature), &olen);
+		
 		Node *newNode = [Node new];
-		newNode.surface = [NSString stringWithCString:utf16_to_utf8(node->surface, node->length, &olen) encoding:NSUTF8StringEncoding];
-		newNode.feature = [NSString stringWithCString:utf16_to_utf8(node->feature, sizeof(node->feature), &olen) encoding:NSUTF8StringEncoding];
+		newNode.surface = [NSString stringWithCString:surface encoding:NSUTF8StringEncoding];
+		newNode.feature = [NSString stringWithCString:feature encoding:NSUTF8StringEncoding];
 		newNode.posid = [NSNumber numberWithInt:node->posid];
 		[newNodes addObject:newNode];
 		[newNode release];
+		
+		free(surface);
+		free(feature);
 	}
 	free(buf2);
 	
-	mecab_destroy(mecab);
-	
 	return [NSArray arrayWithArray:newNodes];
+}
+
+- (void)dealloc {
+	if (mecab != NULL) {
+		mecab_destroy(mecab);
+	}
+
+	[super dealloc];
 }
 
 @end

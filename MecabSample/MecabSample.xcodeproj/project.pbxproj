@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		13B5CCED12C1E5BE0024BB34 /* Mecab.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B5CCEA12C1E5BE0024BB34 /* Mecab.m */; };
-		13B5CCEE12C1E5BE0024BB34 /* Node.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B5CCEC12C1E5BE0024BB34 /* Node.m */; };
 		13B5CCF212C1E5CB0024BB34 /* libmecab_em.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 13B5CCF112C1E5CB0024BB34 /* libmecab_em.dylib */; };
 		13B5CCF612C1E5D90024BB34 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 13B5CCF512C1E5D90024BB34 /* libiconv.dylib */; };
 		13B5CD2B12C1E7760024BB34 /* NodeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B5CD2A12C1E7760024BB34 /* NodeCell.m */; };
 		13B5CD3B12C1E8130024BB34 /* NodeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B5CD3A12C1E8130024BB34 /* NodeCell.xib */; };
+		13F1709B12C2BBD900129797 /* Mecab.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F1709812C2BBD900129797 /* Mecab.m */; };
+		13F1709C12C2BBD900129797 /* Node.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F1709A12C2BBD900129797 /* Node.m */; };
 		1D3623260D0F684500981E51 /* MecabSampleAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* MecabSampleAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -24,15 +24,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		13B5CCE912C1E5BE0024BB34 /* Mecab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mecab.h; sourceTree = "<group>"; };
-		13B5CCEA12C1E5BE0024BB34 /* Mecab.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mecab.m; sourceTree = "<group>"; };
-		13B5CCEB12C1E5BE0024BB34 /* Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
-		13B5CCEC12C1E5BE0024BB34 /* Node.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Node.m; sourceTree = "<group>"; };
 		13B5CCF112C1E5CB0024BB34 /* libmecab_em.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libmecab_em.dylib; path = usr/lib/libmecab_em.dylib; sourceTree = SDKROOT; };
 		13B5CCF512C1E5D90024BB34 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 		13B5CD2912C1E7760024BB34 /* NodeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodeCell.h; sourceTree = "<group>"; };
 		13B5CD2A12C1E7760024BB34 /* NodeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NodeCell.m; sourceTree = "<group>"; };
 		13B5CD3A12C1E8130024BB34 /* NodeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NodeCell.xib; sourceTree = "<group>"; };
+		13F1709712C2BBD900129797 /* Mecab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Mecab.h; path = ../Mecab.h; sourceTree = SOURCE_ROOT; };
+		13F1709812C2BBD900129797 /* Mecab.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Mecab.m; path = ../Mecab.m; sourceTree = SOURCE_ROOT; };
+		13F1709912C2BBD900129797 /* Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Node.h; path = ../Node.h; sourceTree = SOURCE_ROOT; };
+		13F1709A12C2BBD900129797 /* Node.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Node.m; path = ../Node.m; sourceTree = SOURCE_ROOT; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* MecabSampleAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MecabSampleAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* MecabSampleAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MecabSampleAppDelegate.m; sourceTree = "<group>"; };
@@ -80,10 +80,10 @@
 		13B5CCE612C1E5B00024BB34 /* Mecab */ = {
 			isa = PBXGroup;
 			children = (
-				13B5CCE912C1E5BE0024BB34 /* Mecab.h */,
-				13B5CCEA12C1E5BE0024BB34 /* Mecab.m */,
-				13B5CCEB12C1E5BE0024BB34 /* Node.h */,
-				13B5CCEC12C1E5BE0024BB34 /* Node.m */,
+				13F1709712C2BBD900129797 /* Mecab.h */,
+				13F1709812C2BBD900129797 /* Mecab.m */,
+				13F1709912C2BBD900129797 /* Node.h */,
+				13F1709A12C2BBD900129797 /* Node.m */,
 			);
 			name = Mecab;
 			sourceTree = "<group>";
@@ -206,9 +206,9 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* MecabSampleAppDelegate.m in Sources */,
 				28D7ACF80DDB3853001CB0EB /* MecabSampleViewController.m in Sources */,
-				13B5CCED12C1E5BE0024BB34 /* Mecab.m in Sources */,
-				13B5CCEE12C1E5BE0024BB34 /* Node.m in Sources */,
 				13B5CD2B12C1E7760024BB34 /* NodeCell.m in Sources */,
+				13F1709B12C2BBD900129797 /* Mecab.m in Sources */,
+				13F1709C12C2BBD900129797 /* Node.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
