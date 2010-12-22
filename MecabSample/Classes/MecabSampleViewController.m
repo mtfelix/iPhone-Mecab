@@ -15,17 +15,21 @@
 @synthesize textField;
 @synthesize tableView_;
 @synthesize nodeCell;
+@synthesize mecab;
 @synthesize nodes;
 
+- (void)viewDidLoad {
+	[super viewDidLoad];
+	
+	self.mecab = [[Mecab new] autorelease];
+}
 
 - (IBAction)parse:(id)sender {
 	[textField resignFirstResponder];
 	
 	NSString *string = textField.text;
 	
-	Mecab *mecab = [Mecab new];
 	self.nodes = [mecab parseToNodeWithString:string];
-	[mecab release];
 
 	[tableView_ reloadData];
 }
@@ -61,6 +65,7 @@
 }
 
 - (void)dealloc {
+	self.mecab = nil;
 	self.nodes = nil;
 	
 	self.textField = nil;

@@ -12,13 +12,16 @@
 //  http://pokosho.com/b/archives/1045
 //  http://pokosho.com/b/archives/1057
 
+
+#include <mecab.h>
 #import <UIKit/UIKit.h>
 
 
 @interface Mecab : NSObject {
-
+	mecab_t *mecab;
 }
 
++ (NSArray *)parseToNodeWithString:(NSString *)string;
 - (NSArray *)parseToNodeWithString:(NSString *)string;
 
 @end

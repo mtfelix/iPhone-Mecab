@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Mecab.h"
 #import "NodeCell.h"
 
 @interface MecabSampleViewController : UIViewController {
@@ -15,6 +16,7 @@
 	UITableView *tableView_;
 	NodeCell *nodeCell;
 
+	Mecab *mecab;
 	NSArray *nodes;
 
 }
@@ -22,6 +24,7 @@
 @property (nonatomic, retain) IBOutlet UITextField *textField;
 @property (nonatomic, retain) IBOutlet UITableView *tableView_;
 @property (nonatomic, retain) IBOutlet NodeCell *nodeCell;
+@property (nonatomic, retain) Mecab *mecab;
 @property (nonatomic, retain) NSArray *nodes;
 
 - (IBAction)parse:(id)sender;
