@@ -1,0 +1,5 @@
+h1. iPhone Mecab
+
+iPhoneに内蔵されているMecabを利用して、文字列の形態素解析を行うサンプルです。
+
+!http://s3.flcl.jp/mecab_screenshot_1.png!
