@@ -1,8 +1,18 @@
 h1. 形態素解析エンジンMecab on iPhone（内蔵版）
 
-iPhoneに内蔵されているMecabを利用して、文字列の形態素解析を行うサンプルアプリケーションです。
+形態素解析エンジン Mecab を iPhone 上で利用するサンプルアプリケーションです。
+iPhone に内蔵されている Mecab を利用しています。
 
-!http://s3.flcl.jp/mecab_screenshot_1.png!
+iPhone に内蔵されている Mecab にはデーターなどの制限があります。
+制限のない Mecab　を利用されたい場合は以下のサンプルアプリケーションもご覧ください。
+
+"形態素解析エンジンMecab on iPhone（Static Library版）":https://github.com/FLCLjp/iPhone-libmecab
+
+!/FLCLjp/iPhone-Mecab/raw/master/screenshot.png!
+
+h2. ライセンス
+
+サンプルアプリケーションについてはライセンスなどの制限は設けておりません。ご自由にご利用ください。
 
 h2. 謝辞
 
